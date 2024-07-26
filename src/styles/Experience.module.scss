@@ -1,0 +1,151 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+.main {
+  padding: 3rem;
+  background-color: #fff;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .experienceSection {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 0.5s ease-in-out;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        color: #5A9BD5; // Soft Blue
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          font-size: 2rem;
+          color: #5A9BD5;
+          margin-right: 0.75rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      .rolesSection {
+        margin-top: 2rem;
+
+        h4 {
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+          color: #333;
+        }
+
+        .roleCard {
+          background-color: #f9f9f9;
+          border-radius: 8px;
+          padding: 1rem;
+          margin-bottom: 1rem;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: flex-start;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          animation: fadeIn 0.5s ease-in-out;
+
+          &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          }
+
+          .icon {
+            font-size: 1.6rem;
+            color: #5A9BD5;
+            margin-right: 0.75rem;
+          }
+
+          p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .experienceSection {
+      padding: 1.5rem;
+
+      .card {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.4rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+
+        .rolesSection {
+          h4 {
+            font-size: 1.2rem;
+          }
+
+          .roleCard {
+            padding: 0.75rem;
+
+            .icon {
+              font-size: 1.4rem;
+            }
+
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); }
+  100% { transform: translateY(0); }
+}

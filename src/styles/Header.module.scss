@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.header {
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #D3D3D3;
+        }
+      }
+    }
+
+    .menuIcon {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #cacaca;
+      }
+
+      &.rotateOpen {
+        animation: rotateOpen 0.3s forwards;
+      }
+
+      &.rotateClose {
+        animation: rotateClose 0.3s forwards;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      margin: 0;
+
+      li {
+        margin-left: 2rem;
+
+        a {
+          color: #fff;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #cacaca;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      .menuIcon {
+        display: block;
+      }
+
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        right: 2rem;
+        background-color: #222;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+
+        li {
+          margin: 1rem 0;
+          text-align: center;
+        }
+      }
+
+      .showMenu {
+        display: flex;
+      }
+    }
+  }
+}
+
+@keyframes rotateOpen {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotateClose {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

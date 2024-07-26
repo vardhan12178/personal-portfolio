@@ -1,0 +1,85 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+.main {
+  padding: 3rem;
+  background-color: #fff;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .educationSection {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: #232425;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          font-size: 1.6rem;
+          color: #4374df;
+          margin-right: 0.75rem;
+        }
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        color: #666;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .educationSection {
+      padding: 1.5rem;
+
+      .card {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.25rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
