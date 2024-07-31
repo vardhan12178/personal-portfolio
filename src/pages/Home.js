@@ -6,9 +6,13 @@ const Home = () => {
   return (
     <main className={styles.main}>
       <section className={styles.intro}>
-        <h1>Bala Vardhan Pula</h1>
-        <h3>Front End Developer</h3>
-        <p>2.5 years of experience with React, Node, and Next.js</p>
+        <h1 className={styles.heading}>Bala Vardhan Pula</h1>
+        <h3 className={styles.subheading}>Front End Developer</h3>
+        <p>
+          Passionate front-end developer with 2.5 years of hands-on experience 
+          in building responsive, user-friendly web applications using React, 
+          Node, and Next.js.
+        </p>
         <div className={styles.cta}>
           <a 
             href="/resume.pdf" 
@@ -16,7 +20,7 @@ const Home = () => {
             rel="noopener noreferrer" 
             className={styles.resumeButton}
           >
-            Download Resume
+            Download My Resume
           </a>
           <a 
             href="https://wa.me/8688412181" 
@@ -24,7 +28,7 @@ const Home = () => {
             rel="noopener noreferrer" 
             className={styles.contactButton}
           >
-            Contact Me
+            Let's Connect
           </a>
         </div>
       </section>

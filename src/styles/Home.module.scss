@@ -6,14 +6,14 @@
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 
-    h1 {
+    .heading {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
       color: #333;
       animation: slideInFromLeft 1.2s ease-in-out;
     }
 
-    h3 {
+    .subheading {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       color: #666;
@@ -72,11 +72,11 @@
     padding: 1rem;
 
     .intro {
-      h1 {
+      .heading {
         font-size: 2rem;
       }
 
-      h3 {
+      .subheading {
         font-size: 1.2rem;
       }
 
@@ -107,11 +107,11 @@
 
   @media (max-width: 375px) {
     .intro {
-      h1 {
+      .heading {
         font-size: 1.8rem;
       }
 
-      h3 {
+      .subheading {
         font-size: 1rem;
       }
 
