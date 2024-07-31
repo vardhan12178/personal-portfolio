@@ -16,8 +16,7 @@ const Home = () => {
         <div className={styles.cta}>
           <a 
             href="/resume.pdf" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+            download="Bala_Vardhan_Resume.pdf" 
             className={styles.resumeButton}
           >
             Download My Resume
