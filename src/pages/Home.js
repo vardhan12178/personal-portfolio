@@ -3,6 +3,12 @@ import styles from '../styles/Home.module.scss';
 import Projects from '../components/Projects';
 
 const Home = () => {
+  const fileID = "1gKwRppgqVM7nf7Z4hOIvyh-ibUP3O368";
+  const resumeUrl = `https://drive.google.com/uc?id=${fileID}`;
+
+  const handleDownloadResume = () => {
+    window.open(resumeUrl, '_blank');
+  };
   return (
     <main className={styles.main}>
       <section className={styles.intro}>
@@ -14,13 +20,13 @@ const Home = () => {
           Node, and Next.js.
         </p>
         <div className={styles.cta}>
-          <a 
-            href="/resume.pdf" 
-            download="Bala_Vardhan_Resume.pdf" 
+          <button
+           onClick={handleDownloadResume}
+
             className={styles.resumeButton}
           >
             Download My Resume
-          </a>
+          </button>
           <a 
             href="https://wa.me/8688412181" 
             target="_blank" 
