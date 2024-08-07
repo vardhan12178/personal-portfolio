@@ -10,7 +10,7 @@ const Projects = () => {
         {projects.map((project, index) => (
           <div key={index} className={styles.card}>
             <img src={project.imgUrl} alt={project.name} />
-            <h3>{project.name}</h3>
+            <h3>{project.title}</h3>
             <p>{project.description}</p>
             <p><strong>Technologies:</strong> {project.technologies.join(', ')}</p>
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
