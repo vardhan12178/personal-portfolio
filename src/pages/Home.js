@@ -9,6 +9,7 @@ const Home = () => {
   const handleDownloadResume = () => {
     window.open(resumeUrl, '_blank');
   };
+
   return (
     <main className={styles.main}>
       <section className={styles.intro}>
@@ -21,8 +22,7 @@ const Home = () => {
         </p>
         <div className={styles.cta}>
           <button
-           onClick={handleDownloadResume}
-
+            onClick={handleDownloadResume}
             className={styles.resumeButton}
           >
             Download My Resume

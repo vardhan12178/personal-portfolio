@@ -16,6 +16,8 @@ const Header = () => {
         <div 
           className={`${styles.menuIcon} ${isOpen ? styles.rotateOpen : styles.rotateClose}`}
           onClick={toggleMenu}
+          aria-expanded={isOpen}
+          aria-label="Toggle menu"
         >
           {isOpen ? 'X' : '☰'}
         </div>
