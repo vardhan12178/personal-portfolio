@@ -1,7 +1,7 @@
 [ {
   "title": "Ecommerce Site",
   "description": "An ecommerce website built using React, featuring product listings, search functionality, and a shopping cart.",
-  "imgUrl": "https://i.imgur.com/bVyPAw5.jpeg",
+  "imgUrl": "https://i.imgur.com/yype7oa.png",
   "liveUrl": "https://vkartshop.netlify.app/",
   "githubUrl": "https://github.com/vardhan12178/vkart",
   "technologies": ["React", "Node.js", "MongoDB, AWS"]
@@ -14,14 +14,13 @@
       "liveUrl": "https://balavardhan.vercel.app/",
       "githubUrl": "https://github.com/vardhan12178/personal-portfolio",
       "technologies": ["React", "SCSS"]
-    },
-    {
-      "title": "Weather Dashboard",
+    },{
+      "title": "Weather App",
       "description": "A weather dashboard application providing real-time weather updates and forecasts using a clean, responsive design.",
-      "imgUrl": "https://i.imgur.com/IbY1M7q.jpeg",
-      "liveUrl": "https://vardhan-weather.netlify.app/",
-      "githubUrl": "https://github.com/vardhan12178/weather",
-      "technologies": ["React", "Tailwindcss"]
+      "imgUrl": "https://i.imgur.com/4HhyLwW.png",
+      "liveUrl": "https://vardhan-weather.vercel.app/",
+      "githubUrl": "https://github.com/vardhan12178/weather-app",
+      "technologies": ["React","CSS"]
     },
     {
       "title": "MovieSpot",
@@ -31,6 +30,15 @@
       "githubUrl": "https://github.com/vardhan12178/moviespot",
       "technologies": ["React", "Tailwindcss"]
     },
+    {
+      "title": "Weather Dashboard",
+      "description": "A weather dashboard application providing real-time weather updates and forecasts using a clean, responsive design.",
+      "imgUrl": "https://i.imgur.com/IbY1M7q.jpeg",
+      "liveUrl": "https://vardhan-weather.netlify.app/",
+      "githubUrl": "https://github.com/vardhan12178/weather",
+      "technologies": ["React", "Tailwindcss"]
+    },
+    
     {
       "title": "Food App",
       "description": "A comprehensive food ordering application featuring an intuitive UI and seamless order tracking.",
