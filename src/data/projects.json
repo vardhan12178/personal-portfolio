@@ -4,17 +4,17 @@
   "imgUrl": "https://i.imgur.com/yype7oa.png",
   "liveUrl": "https://vkartshop.netlify.app/",
   "githubUrl": "https://github.com/vardhan12178/vkart",
-  "technologies": ["React", "Node.js", "MongoDB, AWS"]
-},
-   
-    {
-      "title": "Portfolio",
-      "description": "A personal portfolio showcasing my projects, skills, and professional background with a modern design.",
-      "imgUrl": "https://i.imgur.com/kpoOc6l.jpeg",
-      "liveUrl": "https://balavardhan.vercel.app/",
-      "githubUrl": "https://github.com/vardhan12178/personal-portfolio",
-      "technologies": ["React", "SCSS"]
-    },{
+  "technologies": ["React", "Node.js","Tailwind CSS", "MongoDB, AWS"]
+},{
+  "title": "News App",
+  "description": "A dynamic and responsive news application that aggregates the latest news articles from various sources. ",
+  "imgUrl": "https://i.imgur.com/tpoio39.jpeg",
+  "liveUrl": "https://vardhan-news.vercel.app/",
+  "githubUrl": "https://github.com/vardhan12178/news-app",
+  "technologies": ["React", "CSS"]
+}
+,
+   {
       "title": "Weather App",
       "description": "A weather dashboard application providing real-time weather updates and forecasts using a clean, responsive design.",
       "imgUrl": "https://i.imgur.com/4HhyLwW.png",
@@ -24,11 +24,21 @@
     },
     {
       "title": "MovieSpot",
-      "description": "A Wikipedia search application that allows users to search and read articles directly from Wikipedia with a user-friendly interface.",
+      "description": "MovieSpot is a sleek and interactive movie search application designed to help users explore and discover detailed information about movies. ",
       "imgUrl": "https://i.imgur.com/M05Lig8.jpeg",
       "liveUrl": "https://vardhan-moviespot.vercel.app/",
       "githubUrl": "https://github.com/vardhan12178/moviespot",
-      "technologies": ["React", "Tailwindcss"]
+      "technologies": ["React", "Tailwind CSS"]
+    }
+    ,
+    
+    {
+      "title": "Portfolio",
+      "description": "A personal portfolio showcasing my projects, skills, and professional background with a modern design.",
+      "imgUrl": "https://i.imgur.com/kpoOc6l.jpeg",
+      "liveUrl": "https://balavardhan.vercel.app/",
+      "githubUrl": "https://github.com/vardhan12178/personal-portfolio",
+      "technologies": ["React", "SCSS"]
     },
     {
       "title": "Weather Dashboard",
