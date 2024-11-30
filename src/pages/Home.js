@@ -14,12 +14,13 @@ const Home = () => {
     <main className={styles.main}>
       <section className={styles.intro}>
         <h1 className={styles.heading}>Bala Vardhan Pula</h1>
-        <h3 className={styles.subheading}>Front End Developer</h3>
-        <p>
-          Passionate front-end developer with 2.5 years of hands-on experience 
-          in building responsive, user-friendly web applications using React, 
-          Node, and Next.js.
-        </p>
+        <h3 className={styles.subheading}>Full Stack Developer</h3>
+<p>
+  Passionate full-stack developer with 3 years of hands-on experience 
+  in building responsive, user-friendly web applications using React, 
+  Node.js, and Next.js, along with backend development expertise.
+</p>
+
         <div className={styles.cta}>
           <button
             onClick={handleDownloadResume}

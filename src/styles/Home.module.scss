@@ -1,85 +1,100 @@
 .main {
   padding: 2rem;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
 
   .intro {
     text-align: center;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
 
     .heading {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-      color: #333;
+      font-size: 3rem;
+      color: #f4f4f4;
+      position: relative;
       animation: slideInFromLeft 1.2s ease-in-out;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 4px;
+        background: #f39c12;
+        border-radius: 2px;
+      }
     }
 
     .subheading {
       font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: #666;
+      color: #ddd;
       animation: slideInFromRight 1.2s ease-in-out;
     }
 
     p {
       font-size: 1.2rem;
-      color: #666;
       max-width: 600px;
       margin: 0 auto;
+      color: #ccc;
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     .cta {
       margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem; /* Ensure proper spacing between buttons */
+      margin-bottom: 2rem; /* Adds space below buttons */
 
       .resumeButton,
       .contactButton {
-        margin: 0 1rem;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-decoration: none;
-        transition: background-color 0.3s, transform 0.3s;
+        padding: 0.8rem 1.5rem;
+        border-radius: 50px;
         font-size: 1rem;
+        text-decoration: none; /* Ensure no underline */
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
 
-        &.resumeButton {
-          background-color: #007bff;
-          color: #fff;
-
-          &:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-          }
+        &:hover {
+          transform: translateY(-3px);
         }
+      }
 
-        &.contactButton {
-          background-color: #28a745;
-          color: #fff;
+      .resumeButton {
+        background-color: #f39c12;
+        color: #fff;
 
-          &:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
-          }
+        &:hover {
+          background-color: #e67e22;
+        }
+      }
+
+      .contactButton {
+        background-color: #28a745;
+        color: #fff;
+
+        &:hover {
+          background-color: #218838;
         }
       }
     }
   }
 
-  h2 {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    color: #333;
+  .projectsSection {
+    margin-top: 4rem; /* Space below the intro section */
   }
 
   @media (max-width: 768px) {
-    padding: 1rem;
-
     .intro {
       .heading {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
 
       .subheading {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
 
       p {
@@ -87,30 +102,21 @@
       }
 
       .cta {
-        display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Stack buttons vertically */
         align-items: center;
 
         .resumeButton,
         .contactButton {
-          margin: 0.5rem 0;
-          width: 90%;
-          box-sizing: border-box;
-          padding: 0.75rem 1rem;
-          font-size: 0.875rem;
+          width: 90%; /* Full width buttons on mobile */
         }
       }
-    }
-
-    h2 {
-      font-size: 1.2rem;
     }
   }
 
   @media (max-width: 375px) {
     .intro {
       .heading {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
 
       .subheading {
@@ -121,48 +127,11 @@
         font-size: 0.9rem;
       }
 
-      .cta {
-        .resumeButton,
-        .contactButton {
-          padding: 0.5rem 0.75rem;
-          font-size: 0.75rem;
-        }
+      .cta .resumeButton,
+      .cta .contactButton {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
       }
     }
-
-    h2 {
-      font-size: 1rem;
-    }
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
   }
 }

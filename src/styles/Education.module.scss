@@ -1,149 +1,102 @@
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
-
 .main {
-  padding: 3rem;
-  background-color: #fff;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #1f1c2c, #121212);
+  color: #fff;
 
   h2 {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-    color: #333;
-    font-family: 'Lato', sans-serif;
+    margin-bottom: 3rem;
+    font-family: 'Poppins', sans-serif;
+    color: #f4f4f4;
   }
 
   .educationSection {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: grid;
-    gap: 1.5rem;
+    gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
     .card {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
+      background: rgba(255, 255, 255, 0.1); /* Slightly lighter than the background */
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 1.5rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
+
       &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       }
-    }
-
-    .cardInner {
-      perspective: 1000px;
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-
-    .cardFront,
-    .cardBack {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      transition: transform 0.6s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem;
-      box-sizing: border-box;
-    }
-
-    .cardFront {
-      background: #fff;
-      z-index: 2;
-    }
-
-    .cardBack {
-      background: #f0f0f0;
-      transform: rotateY(180deg);
-      z-index: 1;
-    }
-
-    .cardInner {
-      transform-style: preserve-3d;
-      transition: transform 0.6s ease;
-    }
-
-    .card:hover .cardInner {
-      transform: rotateY(180deg);
-    }
-
-    h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #232425;
-      display: flex;
-      align-items: center;
 
       .icon {
-        font-size: 1.4rem;
-        color: #4374df;
-        margin-right: 0.5rem;
+        font-size: 2rem;
+        color: #f39c12; /* Bright yellow-orange for icons */
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-    }
 
-    p {
-      font-size: 1rem;
-      color: #555;
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #f4f4f4;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: #aaa;
+        text-align: center;
+        margin: 0.5rem 0 0;
+      }
     }
   }
 
   @media (max-width: 768px) {
     .educationSection {
-      padding: 1.5rem;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 
     .card {
-      height: auto;
-      padding: 0.75rem;
-    }
+      padding: 1rem;
 
-    h3 {
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
+      .icon {
+        font-size: 1.8rem;
+      }
 
-    p {
-      font-size: 0.875rem;
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
     }
   }
 
   @media (max-width: 480px) {
     .educationSection {
-      padding: 1rem;
       grid-template-columns: 1fr;
     }
 
     .card {
-      height: auto;
-      padding: 0.5rem;
-    }
+      padding: 0.75rem;
 
-    h3 {
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-    }
+      .icon {
+        font-size: 1.6rem;
+      }
 
-    p {
-      font-size: 0.75rem;
+      h3 {
+        font-size: 0.95rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
     }
   }
 }

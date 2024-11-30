@@ -1,8 +1,8 @@
 .footer {
-  background-color: #333;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   position: relative;
   bottom: 0;
   width: 100%;
@@ -13,88 +13,53 @@
     align-items: center;
 
     .socialLinks {
-      margin-bottom: 0.2rem;
+      margin-bottom: 1rem;
 
       .socialLink {
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin: 0 0.5rem;
-        transition: color 0.3s;
+        transition: color 0.3s, transform 0.3s;
 
         &:hover {
-          color: #ddd;
-        }
-
-        i {
-          margin: 0;
+          color: #f39c12;
+          transform: scale(1.1);
         }
       }
+    }
+
+    .divider {
+      width: 80%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 1rem auto;
     }
 
     .copyRight {
-      margin: 0.5rem 0;
+      font-size: 0.9rem;
     }
+  }
 
-    .contactInfo {
-      margin: 0.5rem 0;
-      a {
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.3s;
+  .scrollToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
 
-        &:hover {
-          color: #ddd;
-        }
-      }
-    }
-
-    .contactButton {
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #007bff;
+    button {
+      background: #f39c12;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 50%;
       color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: background-color 0.3s, transform 0.3s;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s, transform 0.3s;
 
       &:hover {
-        background-color: #0056b3;
+        background: #e67e22;
         transform: translateY(-2px);
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    padding: 0.5rem;
-
-    .footerContent {
-      .socialLinks {
-        .socialLink {
-          font-size: 1.2rem;
-          margin: 0 0.3rem;
-        }
-      }
-
-      .contactButton {
-        padding: 0.5rem 0.75rem;
-        font-size: 0.875rem;
-      }
-    }
-  }
-
-  @media (max-width: 375px) {
-    .footerContent {
-      .socialLinks {
-        .socialLink {
-          font-size: 1rem;
-          margin: 0 0.2rem;
-        }
-      }
-
-      .contactButton {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.75rem;
       }
     }
   }
