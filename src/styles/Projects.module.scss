@@ -18,7 +18,7 @@
     gap: 2rem;
 
     @media (min-width: 1200px) {
-      grid-template-columns: repeat(5, 1fr); /* Show 5 cards per row */
+      grid-template-columns: repeat(5, 1fr); 
     }
   }
 
@@ -42,23 +42,23 @@
 
     .imageWrapper {
       overflow: hidden;
-      border-radius: 10px; /* Rounded edges for the container */
+      border-radius: 10px; 
       width: 100%;
-      height: 200px; /* Consistent height */
+      height: 200px; 
       position: relative;
 
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Ensures the image fills the container with cropping */
+        object-fit: cover; 
         transition: transform 0.3s ease;
 
         &:hover {
-          transform: scale(1.03); /* Subtle zoom effect */
+          transform: scale(1.03); 
         }
       }
 
-      /* Optional overlay for added style */
+     
       &:before {
         content: '';
         position: absolute;
@@ -67,8 +67,8 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
-        border-radius: 10px; /* Matches the container's border radius */
-        pointer-events: none; /* Ensures it doesn't affect interactions */
+        border-radius: 10px;
+        pointer-events: none; 
       }
     }
 

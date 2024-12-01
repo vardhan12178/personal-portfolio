@@ -1,0 +1,125 @@
+.chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 90%;
+  max-width: 400px;
+  height: 500px;
+  background: linear-gradient(135deg, #2c1a1f, #1e1c1b);
+  color: #ffe6d9;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.chatbot .chatWindow {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.chatbot .chatWindow::-webkit-scrollbar {
+  display: none;
+}
+
+.chatbot .chatWindow .message {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 80%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot .chatWindow .message.user {
+  align-self: flex-end;
+  background: #d35400;
+  color: #fff;
+}
+
+.chatbot .chatWindow .message.bot {
+  align-self: flex-start;
+  background: #e98e44;
+  color: #fff;
+}
+
+.chatbot .inputArea {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid #3e2a2e;
+  background: #24191d;
+}
+
+.chatbot .inputArea input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #4e383c;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-size: 1rem;
+  color: #ffe6d9;
+  background: #3b292d;
+}
+
+.chatbot .inputArea button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chatbot .inputArea button:hover {
+  background: #e67e22;
+}
+
+.chatbotToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.chatbotToggle:hover {
+  transform: translateY(-5px);
+  background-color: #e67e22;
+}
+
+.chatbotToggle svg {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .chatbot {
+    bottom: 60px;
+    width: 95%;
+    height: 400px;
+    right: 10px;
+  }
+}
