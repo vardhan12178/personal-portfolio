@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0; /* Ensure there's no padding that might cause overflow */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
