@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+  width: 100%;
+}
 .header {
   background: linear-gradient(135deg, #1f1c2c, #6a5acd);
   color: #fff;
@@ -69,7 +76,7 @@
         transition: color 0.3s ease, transform 0.2s ease;
 
         &:hover {
-          color: #f39c12;
+          color: #6c63ff;
           transform: translateY(-2px);
         }
 

@@ -105,13 +105,15 @@
       a {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: 0.5rem;
-        padding: 0.8rem 1.5rem;
+        padding: 0.6rem 1.2rem;
         border-radius: 50px;
-        font-size: 0.9rem;
+        font-size: 0.85rem; /* Reduced font size for better fit */
         background-color: #333; /* Default for GitHub */
         color: #fff;
         text-decoration: none;
+        white-space: nowrap; /* Prevents text wrapping */
         transition: background-color 0.3s ease, transform 0.3s ease;
 
         &:hover {
@@ -128,6 +130,13 @@
           transform: translateY(-3px);
         }
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card .buttons a {
+      font-size: 0.75rem; /* Further reduced font size for smaller screens */
+      padding: 0.5rem 1rem; /* Adjusted padding */
     }
   }
 }

@@ -9,6 +9,7 @@ const Chatbot = () => {
   const [typing, setTyping] = useState(false);
   const [userName, setUserName] = useState('');
   const chatWindowRef = useRef(null);
+  const chatbotRef = useRef(null);
 
   const botResponses = {
     greetings: [
@@ -36,7 +37,6 @@ const Chatbot = () => {
     farewell: 'Goodbye! Have a great day! 😊',
     default: "I'm not sure how to respond to that, but feel free to ask me anything!"
   };
-  
 
   useEffect(() => {
     if (isOpen) {
@@ -55,6 +55,23 @@ const Chatbot = () => {
       chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
     }
   }, [messages]);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (chatbotRef.current && !chatbotRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const handleSendMessage = () => {
     if (!input.trim()) return;
@@ -122,7 +139,7 @@ const Chatbot = () => {
       </button>
 
       {isOpen && (
-        <div className={styles.chatbot}>
+        <div className={styles.chatbot} ref={chatbotRef}>
           <div className={styles.chatWindow} ref={chatWindowRef}>
             {messages.map((message, index) => (
               <div key={index} className={`${styles.message} ${styles[message.sender]}`}>
