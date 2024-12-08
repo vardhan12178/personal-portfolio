@@ -16,7 +16,6 @@ const Experience = () => {
           <p>
             As a Front-End Developer at TCS, I worked on various client projects, focusing on creating responsive and user-friendly web applications using modern technologies such as React, JavaScript, and CSS.
           </p>
-          
           <div className={styles.rolesSection}>
             <h4>Roles & Responsibilities</h4>
             <div className={styles.roleCard}>

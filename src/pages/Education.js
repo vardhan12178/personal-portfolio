@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGraduationCap, FaBuilding, FaSchool, FaHome } from 'react-icons/fa';
 import styles from '../styles/Education.module.scss';
 
 const Education = () => {
@@ -9,14 +10,13 @@ const Education = () => {
         <div className={styles.card}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
-              <h3>
-                <i className={`fas fa-graduation-cap ${styles.icon}`}></i>
-                IRC, CCBP Tech 4.0 Intensive Program
-              </h3>
+              <FaGraduationCap className={styles.icon} />
+              <h3>IRC, CCBP Tech 4.0 Intensive Program</h3>
               <p>Mar 2021 - Nov 2021</p>
             </div>
             <div className={styles.cardBack}>
               <p>Full Stack Web Development</p>
+              <p>Key Skills: React, Node.js, MongoDB</p>
             </div>
           </div>
         </div>
@@ -24,14 +24,13 @@ const Education = () => {
         <div className={styles.card}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
-              <h3>
-                <i className={`fas fa-building ${styles.icon}`}></i>
-                Lakireddy Bali Reddy College of Engineering
-              </h3>
+              <FaBuilding className={styles.icon} />
+              <h3>Lakireddy Bali Reddy College of Engineering</h3>
               <p>2016 - 2020</p>
             </div>
             <div className={styles.cardBack}>
               <p>B.Tech in ECE [7.76 CGPA]</p>
+              <p>Projects: IoT System, Signal Processing</p>
             </div>
           </div>
         </div>
@@ -39,14 +38,13 @@ const Education = () => {
         <div className={styles.card}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
-              <h3>
-                <i className={`fas fa-school ${styles.icon}`}></i>
-                Sri Chaitanya Junior College
-              </h3>
+              <FaSchool className={styles.icon} />
+              <h3>Sri Chaitanya Junior College</h3>
               <p>2014 - 2016</p>
             </div>
             <div className={styles.cardBack}>
               <p>Intermediate (M.P.C) [78%]</p>
+              <p>Achievements: Top 10% in State</p>
             </div>
           </div>
         </div>
@@ -54,10 +52,8 @@ const Education = () => {
         <div className={styles.card}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
-              <h3>
-                <i className={`fas fa-home ${styles.icon}`}></i>
-                Vikas School
-              </h3>
+              <FaHome className={styles.icon} />
+              <h3>Vikas School</h3>
               <p>2014</p>
             </div>
             <div className={styles.cardBack}>

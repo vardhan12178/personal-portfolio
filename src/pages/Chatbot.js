@@ -1,32 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaRobot, FaPaperPlane } from 'react-icons/fa';
+import { IoChatbubblesOutline, IoSend } from 'react-icons/io5';
 import styles from '../styles/Chatbot.module.scss';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const [clarification, setClarification] = useState(null);
   const [typing, setTyping] = useState(false);
-  const [userName, setUserName] = useState(null);
+  const [userName, setUserName] = useState('');
   const chatWindowRef = useRef(null);
-
-  useEffect(() => {
-    if (isOpen) {
-      setMessages([
-        {
-          sender: 'bot',
-          text: 'Hi there! I’m Bala Vardhan’s Chatbot. How can I assist you today?'
-        }
-      ]);
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    if (chatWindowRef.current) {
-      chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
-    }
-  }, [messages]);
 
   const botResponses = {
     greetings: [
@@ -41,121 +23,86 @@ const Chatbot = () => {
     skills:
       'Bala Vardhan has expertise in Frontend and Backend development, working with React, Node.js, JavaScript, SQL, and MongoDB.',
     education: 'Bala Vardhan completed his education at Lakireddy Bali Reddy College of Engineering.',
-    experience:
-      'Bala Vardhan has 3 years of experience as a Full Stack Developer, including a role at TCS.',
-    contact: 'You can reach Bala Vardhan at balavardhan975@gmail.com or call him at 9542312181.',
-    location: 'Bala Vardhan is based in Hyderabad, India.',
-    farewell: 'Goodbye! Have a great day! 😊'
+    experience: 'Bala Vardhan has 3 years of experience as a Full Stack Developer, including a role at TCS.',
+    challenges:
+      'One of the biggest challenges Bala faced was optimizing a complex React application with high data usage. He implemented memoization and used React Query for caching to improve performance.',
+    collaboration:
+      'Bala has collaborated with cross-functional teams, working closely with designers, backend developers, and project managers to deliver successful projects.',
+    futureGoals:
+      'Bala’s goal is to continue growing as a Full Stack Developer and work on innovative projects that solve real-world problems.',
+    portfolio: 'You can explore Bala’s portfolio here: [Portfolio Link].',
+    github: 'Check out Bala’s GitHub profile: https://github.com/vardhan12178',
+    linkedin: 'Connect with Bala on LinkedIn: https://www.linkedin.com/in/bala-vardhan-pula-753b011b9',
+    farewell: 'Goodbye! Have a great day! 😊',
+    default: "I'm not sure how to respond to that, but feel free to ask me anything!"
   };
+  
 
-  const typoMap = {
-    nme: 'name',
-    ag: 'age',
-    dob: 'dob',
-    skil: 'skills',
-    educaion: 'education',
-    experince: 'experience',
-    conact: 'contact',
-    phne: 'contact',
-    loc: 'location'
-  };
+  useEffect(() => {
+    if (isOpen) {
+      setMessages([
+        {
+          sender: 'bot',
+          text: 'Hello! I’m Bala Vardhan’s chatbot. How can I assist you today?',
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+      ]);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (chatWindowRef.current) {
+      chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const handleSendMessage = () => {
     if (!input.trim()) return;
 
-    const userMessage = { sender: 'user', text: input };
-    const newMessages = [...messages, userMessage];
-    setMessages(newMessages);
+    const userMessage = {
+      sender: 'user',
+      text: input,
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+    setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setTyping(true);
 
-    if (['clear', 'clear all'].includes(input.toLowerCase())) {
-      setTimeout(() => {
-        setMessages([{ sender: 'bot', text: 'All messages have been cleared.' }]);
-        setTyping(false);
-      }, 1000);
-      return;
-    }
-
-    if (clarification) {
-      setTimeout(() => {
-        if (input.toLowerCase() === 'yes') {
-          const responseKey = clarification; 
-          const botMessage = {
-            sender: 'bot',
-            text: botResponses[responseKey] || "I'm not sure how to respond to that."
-          };
-          setMessages([...newMessages, botMessage]);
-        } else {
-          setMessages([
-            ...newMessages,
-            { sender: 'bot', text: "Okay, let's try again. How can I assist you?" }
-          ]);
-        }
-        setClarification(null); 
-        setTyping(false);
-      }, 1000);
-      return;
-    }
-
-    const lowerInput = input.toLowerCase();
-
-    if (checkForTypo(lowerInput)) {
-      setTyping(false);
-      return;
-    }
-
-    let botMessage = { sender: 'bot', text: "I'm not sure how to respond to that." };
-
     setTimeout(() => {
-      if (['hi', 'hello', 'hey'].includes(lowerInput)) {
-        botMessage.text = botResponses.greetings[Math.floor(Math.random() * botResponses.greetings.length)];
-      } else if (lowerInput.includes('name')) {
-        botMessage.text = userName
-          ? `Your name is ${userName}. Nice to meet you!`
-          : botResponses.name;
-      } else if (lowerInput.includes('my name is')) {
-        const name = lowerInput.split('my name is')[1].trim();
-        setUserName(name);
-        botMessage.text = `Nice to meet you, ${name}! How can I assist you?`;
-      } else if (lowerInput.includes('age')) {
-        botMessage.text = botResponses.age;
-      } else if (lowerInput.includes('dob') || lowerInput.includes('date of birth')) {
-        botMessage.text = botResponses.dob;
-      } else if (lowerInput.includes('skills')) {
-        botMessage.text = botResponses.skills;
-      } else if (lowerInput.includes('education')) {
-        botMessage.text = botResponses.education;
-      } else if (lowerInput.includes('experience')) {
-        botMessage.text = botResponses.experience;
-      } else if (
-        lowerInput.includes('contact') ||
-        lowerInput.includes('mobile number') ||
-        lowerInput.includes('phone number')
-      ) {
-        botMessage.text = botResponses.contact;
-      } else if (lowerInput.includes('location')) {
-        botMessage.text = botResponses.location;
-      } else if (lowerInput.includes('bye')) {
-        botMessage.text = botResponses.farewell;
-      }
-
-      setMessages([...newMessages, botMessage]);
+      const botMessage = {
+        sender: 'bot',
+        text: generateBotResponse(input),
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+      setMessages((prev) => [...prev, botMessage]);
       setTyping(false);
     }, 1000);
   };
 
-  const checkForTypo = (input) => {
-    const correctedWord = typoMap[input];
-    if (correctedWord) {
-      setClarification(correctedWord);
-      setMessages((prev) => [
-        ...prev,
-        { sender: 'bot', text: `Did you mean "${correctedWord}"? Type "yes" to confirm.` }
-      ]);
-      return true;
+  const generateBotResponse = (message) => {
+    const lowerMessage = message.toLowerCase();
+    if (['hi', 'hello', 'hey'].includes(lowerMessage)) {
+      return botResponses.greetings[Math.floor(Math.random() * botResponses.greetings.length)];
     }
-    return false;
+    if (lowerMessage.includes('name')) return userName ? `Hi ${userName}, I'm here to assist you!` : botResponses.name;
+    if (lowerMessage.includes('my name is')) {
+      const name = lowerMessage.split('my name is')[1]?.trim();
+      setUserName(name);
+      return `Nice to meet you, ${name}! How can I assist you today?`;
+    }
+    if (lowerMessage.includes('age')) return botResponses.age;
+    if (lowerMessage.includes('dob') || lowerMessage.includes('date of birth')) return botResponses.dob;
+    if (lowerMessage.includes('skills')) return botResponses.skills;
+    if (lowerMessage.includes('education')) return botResponses.education;
+    if (lowerMessage.includes('experience')) return botResponses.experience;
+    if (lowerMessage.includes('challenges')) return botResponses.challenges;
+    if (lowerMessage.includes('collaboration')) return botResponses.collaboration;
+    if (lowerMessage.includes('future') || lowerMessage.includes('goal')) return botResponses.futureGoals;
+    if (lowerMessage.includes('portfolio')) return botResponses.portfolio;
+    if (lowerMessage.includes('github')) return botResponses.github;
+    if (lowerMessage.includes('linkedin')) return botResponses.linkedin;
+    if (lowerMessage.includes('bye')) return botResponses.farewell;
+    return botResponses.default;
   };
 
   const handleKeyPress = (e) => {
@@ -171,7 +118,7 @@ const Chatbot = () => {
         onClick={() => setIsOpen((prev) => !prev)}
         title="Chat with me!"
       >
-        <FaRobot />
+        <IoChatbubblesOutline />
       </button>
 
       {isOpen && (
@@ -179,7 +126,8 @@ const Chatbot = () => {
           <div className={styles.chatWindow} ref={chatWindowRef}>
             {messages.map((message, index) => (
               <div key={index} className={`${styles.message} ${styles[message.sender]}`}>
-                {message.text}
+                <p>{message.text}</p>
+                <span className={styles.time}>{message.time}</span>
               </div>
             ))}
             {typing && <div className={styles.typing}>Typing...</div>}
@@ -192,8 +140,8 @@ const Chatbot = () => {
               onKeyPress={handleKeyPress}
               placeholder="Type your message..."
             />
-            <button onClick={handleSendMessage}>
-              <FaPaperPlane />
+            <button onClick={handleSendMessage} aria-label="Send message">
+              <IoSend />
             </button>
           </div>
         </div>

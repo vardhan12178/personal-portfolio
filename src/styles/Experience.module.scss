@@ -1,6 +1,6 @@
 .main {
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, #1f1c2c, #121212);
+  background: linear-gradient(135deg, #1f1c2c, #6a5acd);
   color: #fff;
 
   h2 {
@@ -9,29 +9,37 @@
     margin-bottom: 3rem;
     font-family: 'Poppins', sans-serif;
     color: #f4f4f4;
-    animation: fadeIn 1s ease-in-out;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #f39c12;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
   }
 
   .experienceSection {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.05); 
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 
     .card {
-      background: rgba(255, 255, 255, 0.1); 
+      background: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 2rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      animation: slideUp 0.5s ease-in-out;
 
       &:hover {
         transform: translateY(-10px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        background-color: rgba(255, 255, 255, 0.15); 
+        background-color: rgba(255, 255, 255, 0.15);
       }
 
       h3 {
@@ -40,17 +48,16 @@
         color: #f4f4f4;
         display: flex;
         align-items: center;
-        justify-content: center;
 
         .icon {
           font-size: 2rem;
-          color: #f39c12; 
+          color: #f39c12;
           margin-right: 0.75rem;
           transition: transform 0.3s ease, color 0.3s ease;
 
           &:hover {
             transform: scale(1.2);
-            color: #fff; 
+            color: #fff;
           }
         }
       }
@@ -69,13 +76,12 @@
           font-size: 1.5rem;
           margin-bottom: 1.5rem;
           color: #f4f4f4;
-          border-bottom: 2px solid #f39c12; 
-          display: inline-block;
+          border-bottom: 2px solid #f39c12;
           padding-bottom: 0.5rem;
         }
 
         .roleCard {
-          background: rgba(255, 255, 255, 0.1); 
+          background: rgba(255, 255, 255, 0.1);
           border-radius: 10px;
           padding: 1.5rem;
           margin-bottom: 1.5rem;
@@ -87,7 +93,7 @@
           &:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.2); 
+            background: rgba(255, 255, 255, 0.2);
           }
 
           .icon {
@@ -173,13 +179,9 @@
 
         h3 {
           font-size: 1.4rem;
-          flex-direction: column;
-          align-items: flex-start;
 
           .icon {
             font-size: 1.6rem;
-            margin-right: 0;
-            margin-bottom: 0.5rem;
           }
         }
 
@@ -197,7 +199,6 @@
 
             .icon {
               font-size: 1.6rem;
-              margin-right: 0.5rem;
             }
 
             p {
@@ -207,23 +208,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0);
   }
 }

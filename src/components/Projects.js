@@ -19,10 +19,20 @@ const Projects = () => {
               <strong>Technologies:</strong> {project.technologies.join(', ')}
             </p>
             <div className={styles.buttons}>
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View on GitHub"
+              >
                 <FaGithub /> GitHub
               </a>
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="View Live Demo"
+              >
                 <FaExternalLinkAlt /> Live Demo
               </a>
             </div>

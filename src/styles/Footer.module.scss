@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  background: linear-gradient(135deg, #1f1c2c, #6a5acd);
   color: #fff;
   text-align: center;
   padding: 1.5rem 1rem;
@@ -22,7 +22,7 @@
         transition: color 0.3s, transform 0.3s;
 
         &:hover {
-          color: #f39c12;
+          color: #6c63ff;
           transform: scale(1.1);
         }
       }
@@ -37,17 +37,18 @@
 
     .copyRight {
       font-size: 0.9rem;
+      color: #ddd;
     }
   }
 
   .scrollToTop {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1000;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
 
     button {
-      background: #f39c12;
+      background: #6c63ff;
       border: none;
       padding: 0.8rem;
       border-radius: 50%;
@@ -55,12 +56,32 @@
       font-size: 1.2rem;
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s, transform 0.3s;
+      transition: background 0.3s, transform 0.3s, opacity 0.3s;
+      opacity: 0;
+      animation: fadeIn 0.5s forwards;
 
       &:hover {
-        background: #e67e22;
+        background: #594aad;
         transform: translateY(-2px);
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .scrollToTop {
+    bottom: 15px;
+    right: 15px;
+
+    button {
+      padding: 0.7rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }

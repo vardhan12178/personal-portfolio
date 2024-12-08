@@ -1,26 +1,28 @@
 .chatbot {
   position: fixed;
-  bottom: 80px;
+  bottom: 100px;
   right: 20px;
-  width: 90%;
-  max-width: 400px;
-  height: 500px;
-  background: linear-gradient(135deg, #2c1a1f, #1e1c1b);
-  color: #ffe6d9;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 25%;
+  height: 400px;
+  background: linear-gradient(135deg, #1f1c2c, #6a5acd);
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .chatbot .chatWindow {
   flex: 1;
-  padding: 1rem;
+  padding: 0.8rem 1rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -30,69 +32,83 @@
 }
 
 .chatbot .chatWindow .message {
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1rem;
-  line-height: 1.5;
-  max-width: 80%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  position: relative;
 }
 
 .chatbot .chatWindow .message.user {
   align-self: flex-end;
-  background: #d35400;
+  background: linear-gradient(135deg, #6c63ff, #8676ff);
   color: #fff;
+  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.4);
 }
 
 .chatbot .chatWindow .message.bot {
   align-self: flex-start;
-  background: #e98e44;
+  background: #3e2c5a;
   color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.chatbot .chatWindow .message .time {
+  font-size: 0.75rem;
+  margin-top: 2px;
+  text-align: right;
+  color: #ddd;
 }
 
 .chatbot .inputArea {
   display: flex;
   align-items: center;
-  padding: 1rem;
-  border-top: 1px solid #3e2a2e;
-  background: #24191d;
+  padding: 0.8rem;
+  background: #2b2b2b;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .chatbot .inputArea input {
   flex: 1;
-  padding: 0.75rem;
-  border: 1px solid #4e383c;
-  border-radius: 10px;
-  margin-right: 10px;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 15px;
   font-size: 1rem;
-  color: #ffe6d9;
-  background: #3b292d;
+  color: #fff;
+  background: #3b3b3b;
+  transition: box-shadow 0.3s ease;
+}
+
+.chatbot .inputArea input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.8);
 }
 
 .chatbot .inputArea button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f39c12;
-  color: #fff;
+  margin-left: 8px;
+  background: linear-gradient(135deg, #6c63ff, #594aad);
   border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-size: 1.5rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .chatbot .inputArea button:hover {
-  background: #e67e22;
+  background: #594aad;
+  transform: translateY(-2px);
 }
 
 .chatbotToggle {
   position: fixed;
-  bottom: 20px;
+  bottom: 70px;
   right: 20px;
-  background: #f39c12;
+  background: #6c63ff;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -108,18 +124,55 @@
 
 .chatbotToggle:hover {
   transform: translateY(-5px);
-  background-color: #e67e22;
+  background-color: #594aad;
 }
 
 .chatbotToggle svg {
   font-size: 1.5rem;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 768px) {
   .chatbot {
+    bottom: 80px;
+    right: 20px;
+    width: calc(100% - 30px);
+    height: 380px;
+      max-width: 95%;
+  }
+
+  .chatbot .inputArea input {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .chatbot .inputArea button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .chatbot .chatWindow .message {
+    max-width: 85%;
+  }
+
+  .chatbotToggle {
     bottom: 60px;
-    width: 95%;
-    height: 400px;
-    right: 10px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .chatbotToggle svg {
+    font-size: 1.2rem;
   }
 }
