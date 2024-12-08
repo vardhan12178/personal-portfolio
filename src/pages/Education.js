@@ -30,7 +30,6 @@ const Education = () => {
             </div>
             <div className={styles.cardBack}>
               <p>B.Tech in ECE [7.76 CGPA]</p>
-              <p>Projects: IoT System, Signal Processing</p>
             </div>
           </div>
         </div>
@@ -44,7 +43,6 @@ const Education = () => {
             </div>
             <div className={styles.cardBack}>
               <p>Intermediate (M.P.C) [78%]</p>
-              <p>Achievements: Top 10% in State</p>
             </div>
           </div>
         </div>
