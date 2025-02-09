@@ -1,4 +1,13 @@
-[ {
+[ 
+  {
+    "title": "Fitness Tracker",
+    "description": "A comprehensive fitness tracker that allows users to log daily workouts, meals, sleep, and track progress towards their fitness goals with personalized insights.",
+    "imgUrl": "https://i.imgur.com/AMgOg3D.jpeg",
+    "liveUrl": "https://vardhan-fittrack.vercel.app/",
+    "githubUrl": "https://github.com/vardhan12178/Fitness-Tracker",
+    "technologies": ["React", "Context API", "CSS"]
+  },
+  {
   "title": "Ecommerce Site",
   "description": "An ecommerce website built using React, featuring product listings, search functionality, and a shopping cart.",
   "imgUrl": "https://i.imgur.com/yype7oa.png",
