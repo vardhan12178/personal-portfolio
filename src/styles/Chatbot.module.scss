@@ -3,10 +3,11 @@
   bottom: 100px;
   right: 20px;
   width: 100%;
-  max-width: 25%;
-  height: 400px;
-  background: linear-gradient(135deg, #1f1c2c, #6a5acd);
-  color: #fff;
+  max-width: 350px;
+  height: 450px;
+  background: rgba(10, 25, 47, 0.9); // Semi-transparent navy blue
+  backdrop-filter: blur(10px); // Glassmorphism effect
+  color: #ccd6f6; // Light gray-blue text
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   display: flex;
@@ -18,11 +19,11 @@
 
 .chatbot .chatWindow {
   flex: 1;
-  padding: 0.8rem 1rem;
+  padding: 1rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -32,11 +33,11 @@
 }
 
 .chatbot .chatWindow .message {
-  max-width: 90%;
-  padding: 6px 10px;
+  max-width: 80%;
+  padding: 8px 12px;
   border-radius: 12px;
   font-size: 0.9rem;
-  line-height: 1.3;
+  line-height: 1.4;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   word-wrap: break-word;
   position: relative;
@@ -44,30 +45,30 @@
 
 .chatbot .chatWindow .message.user {
   align-self: flex-end;
-  background: linear-gradient(135deg, #6c63ff, #8676ff);
-  color: #fff;
-  box-shadow: 0 4px 8px rgba(108, 99, 255, 0.4);
+  background: linear-gradient(135deg, #64ffda, #52d3b8); // Cyan gradient
+  color: #0a192f; // Dark text
+  box-shadow: 0 4px 8px rgba(100, 255, 218, 0.4);
 }
 
 .chatbot .chatWindow .message.bot {
   align-self: flex-start;
-  background: #3e2c5a;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.1); // Semi-transparent white
+  color: #ccd6f6; // Light gray-blue text
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .chatbot .chatWindow .message .time {
   font-size: 0.75rem;
-  margin-top: 2px;
+  margin-top: 4px;
   text-align: right;
-  color: #ddd;
+  color: #8892b0; // Lighter gray-blue
 }
 
 .chatbot .inputArea {
   display: flex;
   align-items: center;
   padding: 0.8rem;
-  background: #2b2b2b;
+  background: rgba(10, 25, 47, 0.8); // Semi-transparent navy blue
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -77,30 +78,30 @@
   border: none;
   border-radius: 15px;
   font-size: 1rem;
-  color: #fff;
-  background: #3b3b3b;
+  color: #ccd6f6; // Light gray-blue text
+  background: rgba(255, 255, 255, 0.1); // Semi-transparent white
   transition: box-shadow 0.3s ease;
 }
 
 .chatbot .inputArea input:focus {
   outline: none;
-  box-shadow: 0 0 8px rgba(108, 99, 255, 0.8);
+  box-shadow: 0 0 8px rgba(100, 255, 218, 0.8); // Cyan glow
 }
 
 .chatbot .inputArea button {
   margin-left: 8px;
-  background: linear-gradient(135deg, #6c63ff, #594aad);
+  background: linear-gradient(135deg, #64ffda, #52d3b8); // Cyan gradient
   border: none;
   padding: 0.6rem 0.75rem;
   border-radius: 12px;
-  color: #fff;
+  color: #0a192f; // Dark text
   font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .chatbot .inputArea button:hover {
-  background: #594aad;
+  background: linear-gradient(135deg, #52d3b8, #40b9a0); // Darker cyan gradient
   transform: translateY(-2px);
 }
 
@@ -108,8 +109,8 @@
   position: fixed;
   bottom: 70px;
   right: 20px;
-  background: #6c63ff;
-  color: #fff;
+  background: linear-gradient(135deg, #64ffda, #52d3b8); // Cyan gradient
+  color: #0a192f; // Dark text
   border: none;
   border-radius: 50%;
   width: 60px;
@@ -124,11 +125,49 @@
 
 .chatbotToggle:hover {
   transform: translateY(-5px);
-  background-color: #594aad;
+  background: linear-gradient(135deg, #52d3b8, #40b9a0); // Darker cyan gradient
 }
 
 .chatbotToggle svg {
   font-size: 1.5rem;
+}
+
+.typing {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #8892b0; // Lighter gray-blue
+  margin-top: 8px;
+}
+
+.typing span {
+  margin-right: 2px;
+}
+
+.typing .dot1,
+.typing .dot2,
+.typing .dot3 {
+  animation: typingDots 1.5s infinite;
+}
+
+.typing .dot2 {
+  animation-delay: 0.5s;
+}
+
+.typing .dot3 {
+  animation-delay: 1s;
+}
+
+@keyframes typingDots {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fadeIn {
@@ -146,7 +185,7 @@
   .chatbot {
     bottom: 80px;
     height: 380px;
-      max-width: 90%;
+    max-width: 90%;
   }
 
   .chatbot .inputArea input {

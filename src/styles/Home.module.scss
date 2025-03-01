@@ -1,15 +1,47 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .main {
   padding: 2rem;
-  background: linear-gradient(135deg, #1f1c2c, #6a5acd);
-  color: #fff;
+  background: linear-gradient(135deg, #0a192f, #112240); // Updated gradient
+  color: #ccd6f6; // Light gray-blue text
+  min-height: 100vh;
 
   .intro {
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
 
     .heading {
-      font-size: 3rem; 
-      color: #f4f4f4;
+      font-size: 3rem;
+      color: #ccd6f6; // Light gray-blue text
       position: relative;
       animation: slideInFromLeft 1.2s ease-in-out;
 
@@ -21,14 +53,14 @@
         transform: translateX(-50%);
         width: 60%;
         height: 4px;
-        background: #f39c12;
+        background: #64ffda; // Cyan underline
         border-radius: 2px;
       }
     }
 
     .subheading {
       font-size: 1.5rem;
-      color: #ddd;
+      color: #8892b0; // Lighter gray-blue for subheading
       animation: slideInFromRight 1.2s ease-in-out;
     }
 
@@ -36,7 +68,7 @@
       font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto;
-      color: #e0e0e0;
+      color: #a8b2d1; // Light gray-blue for body text
       animation: fadeIn 1.5s ease-in-out;
     }
 
@@ -54,13 +86,13 @@
         font-size: 1rem;
         border: none;
         cursor: pointer;
-        background-color: #f39c12;
-        color: #fff;
+        background-color: #64ffda; // Cyan button
+        color: #0a192f; // Dark text
         transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 
         &:hover {
           transform: translateY(-3px);
-          background-color: #e67e22;
+          background-color: #52d3b8; // Darker cyan on hover
           box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
       }
@@ -72,13 +104,14 @@
         font-size: 1rem;
         border: none;
         cursor: pointer;
-        background-color: #6c63ff;
-        color: #fff;
+        background-color: #0a192f; // Dark button
+        color: #64ffda; // Cyan text
+        border: 2px solid #64ffda; // Cyan border
         transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 
         &:hover {
           transform: translateY(-3px);
-          background-color: #594aad;
+          background-color: #112240; // Darker background on hover
           box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
       }

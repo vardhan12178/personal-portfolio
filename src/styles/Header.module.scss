@@ -1,39 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden; 
-  width: 100%;
-}
 .header {
-  background: linear-gradient(135deg, #1f1c2c, #6a5acd);
-  color: #fff;
-  padding: 1rem 2rem;
+  background: rgba(10, 25, 47, 0.9); // Semi-transparent navy blue
+  backdrop-filter: blur(10px); // Glassmorphism effect
+  color: #ccd6f6; // Light gray-blue text
+  padding: 2rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   font-family: "Poppins", sans-serif;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 
   h1 {
     margin: 0;
     font-size: 1.8rem;
+    font-weight: 700;
 
     a {
-      color: #fff;
+      color: #ccd6f6; // Light gray-blue text
       text-decoration: none;
       transition: color 0.3s ease;
 
       &:hover {
-        color: #f39c12;
+        color: #64ffda; // Cyan on hover
       }
     }
   }
@@ -42,11 +37,11 @@ html, body {
     display: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #fff;
+    color: #ccd6f6; // Light gray-blue text
     transition: transform 0.3s ease, color 0.3s ease;
 
     &:hover {
-      color: #f39c12;
+      color: #64ffda; // Cyan on hover
     }
 
     &.rotateOpen {
@@ -68,7 +63,7 @@ html, body {
       margin-left: 2rem;
 
       a {
-        color: #fff;
+        color: #ccd6f6; // Light gray-blue text
         font-size: 1rem;
         text-decoration: none;
         position: relative;
@@ -76,19 +71,22 @@ html, body {
         transition: color 0.3s ease, transform 0.2s ease;
 
         &:hover {
-          color: #6c63ff;
+          color: #64ffda; // Cyan on hover
           transform: translateY(-2px);
         }
 
-        &.active::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: -4px;
-          width: 100%;
-          height: 2px;
-          background: #f39c12;
-          transition: width 0.3s ease-in-out;
+        &.active {
+          color: #64ffda; // Cyan for active link
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #64ffda, #0a192f); // Gradient underline
+            transition: width 0.3s ease-in-out;
+          }
         }
       }
     }
@@ -107,7 +105,8 @@ html, body {
       position: absolute;
       top: 100%;
       right: 0;
-      background: linear-gradient(135deg, #1f1c2c, #6a5acd);
+      background: rgba(10, 25, 47, 0.9); // Semi-transparent navy blue
+      backdrop-filter: blur(10px); // Glassmorphism effect
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -122,6 +121,7 @@ html, body {
 
     .showMenu {
       display: flex;
+      transform: translateX(0);
     }
   }
 }

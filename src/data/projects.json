@@ -10,7 +10,7 @@
   {
   "title": "Ecommerce Site",
   "description": "An ecommerce website built using React, featuring product listings, search functionality, and a shopping cart.",
-  "imgUrl": "https://i.imgur.com/yype7oa.png",
+  "imgUrl": "https://i.imgur.com/26tKsxV.jpeg",
   "liveUrl": "https://vkartshop.netlify.app/",
   "githubUrl": "https://github.com/vardhan12178/vkart",
   "technologies": ["React", "Node.js","Tailwind CSS", "MongoDB, AWS"]

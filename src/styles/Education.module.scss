@@ -1,14 +1,14 @@
 .main {
   padding: 4rem 1rem;
-  background: linear-gradient(135deg, #1f1c2c, #6a5acd);
-  color: #fff;
+  background: linear-gradient(135deg, #0a192f, #112240); // Updated gradient
+  color: #ccd6f6; // Light gray-blue text
 
   h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     font-family: 'Poppins', sans-serif;
-    color: #f4f4f4;
+    color: #ccd6f6; // Light gray-blue text
     position: relative;
 
     &:after {
@@ -16,7 +16,7 @@
       display: block;
       width: 80px;
       height: 3px;
-      background: #f39c12;
+      background: #64ffda; // Cyan underline
       margin: 1rem auto 0;
       border-radius: 2px;
     }
@@ -30,7 +30,8 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
     .card {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1); // Semi-transparent white
+      backdrop-filter: blur(10px); // Glassmorphism effect
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       overflow: hidden;
@@ -54,33 +55,39 @@
 
         .icon {
           font-size: 2.5rem;
-          color: #f39c12;
+          color: #64ffda; // Cyan icon
           margin-bottom: 1rem;
+          transition: transform 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            transform: scale(1.2);
+            color: #52d3b8; // Darker cyan on hover
+          }
         }
 
         h3 {
           font-size: 1.2rem;
           font-weight: 600;
-          color: #f4f4f4;
+          color: #ccd6f6; // Light gray-blue text
           margin-bottom: 0.5rem;
         }
 
         p {
           font-size: 0.9rem;
-          color: #ddd;
+          color: #a8b2d1; // Light gray-blue for body text
         }
       }
 
       .cardBack {
         padding: 1.5rem;
-        background: linear-gradient(135deg, #6a5acd, #1f1c2c);
-        color: #fff;
+        background: linear-gradient(135deg, #64ffda, #52d3b8); // Cyan gradient
+        color: #0a192f; // Dark text
         text-align: center;
 
         p {
           font-size: 1rem;
           font-weight: 500;
-          color: #f4f4f4;
+          color: #0a192f; // Dark text
         }
       }
     }

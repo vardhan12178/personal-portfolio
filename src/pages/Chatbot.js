@@ -56,7 +56,6 @@ const Chatbot = () => {
     }
   }, [messages]);
 
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (chatbotRef.current && !chatbotRef.current.contains(event.target)) {
@@ -147,7 +146,14 @@ const Chatbot = () => {
                 <span className={styles.time}>{message.time}</span>
               </div>
             ))}
-            {typing && <div className={styles.typing}>Typing...</div>}
+            {typing && (
+              <div className={styles.typing}>
+                <span>Typing</span>
+                <span className={styles.dot1}>.</span>
+                <span className={styles.dot2}>.</span>
+                <span className={styles.dot3}>.</span>
+              </div>
+            )}
           </div>
           <div className={styles.inputArea}>
             <input
