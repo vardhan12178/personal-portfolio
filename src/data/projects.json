@@ -14,7 +14,15 @@
   "liveUrl": "https://vkartshop.netlify.app/",
   "githubUrl": "https://github.com/vardhan12178/vkart",
   "technologies": ["React", "Node.js","Tailwind CSS", "MongoDB, AWS"]
-},{
+},    {
+  "title": "Weather Dashboard",
+  "description": "A weather dashboard application providing real-time weather updates and forecasts using a clean, responsive design.",
+  "imgUrl": "https://i.imgur.com/Dtf2Ko0.jpeg",
+  "liveUrl": "https://vardhan-weather.netlify.app/",
+  "githubUrl": "https://github.com/vardhan12178/weather",
+  "technologies": ["React", "Tailwindcss"]
+},
+{
   "title": "News App",
   "description": "A dynamic and responsive news application that aggregates the latest news articles from various sources. ",
   "imgUrl": "https://i.imgur.com/tpoio39.jpeg",
@@ -49,15 +57,7 @@
       "githubUrl": "https://github.com/vardhan12178/personal-portfolio",
       "technologies": ["React", "SCSS"]
     },
-    {
-      "title": "Weather Dashboard",
-      "description": "A weather dashboard application providing real-time weather updates and forecasts using a clean, responsive design.",
-      "imgUrl": "https://i.imgur.com/IbY1M7q.jpeg",
-      "liveUrl": "https://vardhan-weather.netlify.app/",
-      "githubUrl": "https://github.com/vardhan12178/weather",
-      "technologies": ["React", "Tailwindcss"]
-    },
-    
+
     {
       "title": "Food App",
       "description": "A comprehensive food ordering application featuring an intuitive UI and seamless order tracking.",
