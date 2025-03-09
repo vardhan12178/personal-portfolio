@@ -1,10 +1,11 @@
 .footer {
   width: 100%;
-  background: linear-gradient(135deg, #0a192f, #112240); // Updated gradient
-  color: #ccd6f6; // Light gray-blue text
+  background: linear-gradient(135deg, #1e2a44, #0f1c33); // Softer gradient
+  color: #d3d3d3; // Light gray text
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem; // Increased padding
   margin-top: auto; // Ensure footer stays at the bottom
+  font-family: "Inter", sans-serif; // Body text font
 
   .footerContent {
     display: flex;
@@ -12,75 +13,120 @@
     align-items: center;
 
     .socialLinks {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem; // More spacing
 
       .socialLink {
-        color: #ccd6f6; // Light gray-blue text
-        font-size: 1.8rem;
-        margin: 0 0.5rem;
-        transition: color 0.3s, transform 0.3s;
+        color: #ffffff; // Pure white for consistency
+        font-size: 2rem; // Slightly larger
+        margin: 0 1rem; // More spacing between links
+        transition: color 0.3s ease, transform 0.3s ease;
 
         &:hover {
-          color: #64ffda; // Cyan on hover
-          transform: scale(1.1);
+          color: #00e5d1; // Brighter cyan
+          transform: scale(1.2); // Slightly more scale
+        }
+
+        &:focus {
+          outline: 3px solid #00e5d1; // Focus ring
+          outline-offset: 2px;
         }
       }
     }
 
     .divider {
-      width: 50px;
-      height: 2px;
-      background: #64ffda; // Cyan divider
-      margin: 1rem 0;
+      width: 60px; // Slightly wider
+      height: 3px; // Slightly thicker
+      background: linear-gradient(90deg, #00e5d1, #00a8e8); // Updated gradient
+      margin: 1.5rem 0; // More spacing
+      animation: drawLine 1.5s ease-in-out forwards;
     }
 
     .copyRight {
-      font-size: 0.9rem;
-      color: #8892b0; // Lighter gray-blue
+      font-family: "Poppins", sans-serif;
+      font-size: 1rem; // Slightly larger
+      font-weight: 400; // Regular weight
+      color: #d3d3d3; // Light gray
     }
   }
 
   .scrollToTop {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px; // Adjusted position
+    right: 30px; // Adjusted position
     z-index: 999;
 
-    button {
-      background: linear-gradient(135deg, #64ffda, #52d3b8); // Cyan gradient
+    .scrollButton {
+      background: linear-gradient(135deg, #00e5d1, #00a8e8); // Consistent gradient
       border: none;
-      padding: 0.8rem;
+      padding: 1rem; // Larger padding
       border-radius: 50%;
-      color: #0a192f; // Dark text
-      font-size: 1.2rem;
+      color: #ffffff; // White icon
+      font-size: 1.5rem; // Larger icon
       cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s, transform 0.3s, opacity 0.3s;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease, transform 0.3s ease, opacity 0.5s ease;
       opacity: 0;
       animation: fadeIn 0.5s forwards;
 
       &:hover {
-        background: linear-gradient(135deg, #52d3b8, #40b9a0); // Darker cyan gradient
-        transform: translateY(-2px);
+        background: linear-gradient(135deg, #52d3b8, #3ea58d); // Darker gradient
+        transform: translateY(-5px); // More lift
+        box-shadow: 0 8px 16px rgba(0, 229, 209, 0.3); // Glow effect
+      }
+
+      &:focus {
+        outline: 3px solid #00e5d1; // Focus ring
+        outline-offset: 2px;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .scrollToTop {
-    bottom: 15px;
-    right: 15px;
+  .footer {
+    padding: 1.5rem 1rem;
 
-    button {
-      padding: 0.7rem;
-      font-size: 1rem;
+    .footerContent {
+      .socialLinks {
+        .socialLink {
+          font-size: 1.8rem;
+          margin: 0 0.75rem;
+        }
+      }
+
+      .copyRight {
+        font-size: 0.9rem;
+      }
+    }
+
+    .scrollToTop {
+      bottom: 20px;
+      right: 20px;
+
+      .scrollButton {
+        padding: 0.8rem;
+        font-size: 1.2rem;
+      }
     }
   }
 }
 
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px;
   }
 }

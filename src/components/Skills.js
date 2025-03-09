@@ -34,13 +34,13 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section className={styles.skills}>
-      <h2>Skills</h2>
+    <section className={styles.skills} aria-label="Technical Skills">
+      <h2 className={styles.sectionHeading}>Skills</h2>
       <div className={styles.skillsContainer}>
         {skills.map((skill, index) => (
-          <div key={index} className={styles.skillCard}>
+          <div key={index} className={styles.skillCard} tabIndex={0}>
             <div className={styles.icon}>{skill.icon}</div>
-            <p>{skill.name}</p>
+            <p className={styles.skillName}>{skill.name}</p>
           </div>
         ))}
       </div>

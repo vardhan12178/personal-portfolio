@@ -25,6 +25,7 @@ const Home = () => {
           <button
             onClick={handleDownloadResume}
             className={styles.resumeButton}
+            aria-label="Download Bala Vardhan Pula's resume"
           >
             Download My Resume
           </button>
@@ -33,13 +34,14 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.contactButton}
+            aria-label="Connect with Bala Vardhan Pula via WhatsApp"
           >
             Let's Connect
           </a>
         </div>
       </section>
       <Projects />
-      <Chatbot />
+      {/* <Chatbot /> */}
     </main>
   );
 };

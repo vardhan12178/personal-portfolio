@@ -1,118 +1,131 @@
 .main {
-  padding: 4rem 1rem;
-  background: linear-gradient(135deg, #0a192f, #112240); // Updated gradient
-  color: #ccd6f6; // Light gray-blue text
+  padding: 4rem 2rem; // Consistent padding with other components
+  background: linear-gradient(135deg, #1e2a44, #0f1c33); // Updated gradient for consistency
+  color: #d3d3d3; // Light gray text
+  font-family: "Inter", sans-serif; // Body text font
 
-  h2 {
+  .sectionHeading {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    font-family: 'Poppins', sans-serif;
-    color: #ccd6f6; // Light gray-blue text
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem; // Larger for consistency with other sections
+    font-weight: 700; // Bold
+    margin-bottom: 3rem; // More spacing
+    color: #ffffff; // Pure white for consistency
+    position: relative;
+    animation: fadeIn 1s ease-in-out; // Consistent animation
 
     &:after {
       content: '';
       display: block;
-      width: 80px;
-      height: 3px;
-      background: #64ffda; // Cyan underline
+      width: 100px; // Wider underline to match other sections
+      height: 4px; // Consistent thickness
+      background: linear-gradient(90deg, #00e5d1, #00a8e8); // Updated cyan gradient
       margin: 1rem auto 0;
       border-radius: 2px;
+      animation: drawLine 1.5s ease-in-out forwards; // Consistent animation
     }
   }
 
   .experienceSection {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 2.5rem;
-    background: rgba(10, 25, 47, 0.7); // Semi-transparent navy blue
-    backdrop-filter: blur(10px); // Glassmorphism effect
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 3rem; // Consistent with other sections
+    background: rgba(30, 42, 68, 0.9); // Updated navy for consistency
+    backdrop-filter: blur(12px); // Stronger glassmorphism to match others
+    border-radius: 15px; // Larger radius for consistency
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); // Stronger shadow
 
     .card {
-      background: rgba(255, 255, 255, 0.1); // Semi-transparent white
+      background: rgba(255, 255, 255, 0.05); // Subtler transparency for consistency
       border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      padding: 2.5rem; // More padding for spacious feel
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      animation: fadeIn 1s ease-in-out; // Add animation for consistency
 
       &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        background-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-12px); // Stronger lift to match others
+        box-shadow: 0 12px 30px rgba(0, 229, 209, 0.3); // Glow effect
+        background: rgba(255, 255, 255, 0.1); // Consistent hover background
       }
 
       h3 {
-        font-size: 1.8rem;
+        font-size: 2rem; // Larger for prominence, matching other sections
+        font-weight: 600; // Semi-bold
         margin-bottom: 1rem;
-        color: #ccd6f6; // Light gray-blue text
+        color: #ffffff; // Pure white for consistency
         display: flex;
         align-items: center;
+        animation: fadeIn 1.2s ease-in-out; // Add animation
 
         .icon {
-          font-size: 2rem;
-          color: #64ffda; // Cyan icon
-          margin-right: 0.75rem;
-          transition: transform 0.3s ease, color 0.3s ease;
+          font-size: 2.5rem; // Larger icon to match other sections
+          color: #00e5d1; // Brighter cyan for consistency
+          margin-right: 1rem; // More spacing
+          transition: transform 0.4s ease 0.1s, color 0.3s ease;
 
           &:hover {
             transform: scale(1.2);
-            color: #52d3b8; // Darker cyan on hover
+            color: #00a8e8; // Lighter cyan on hover for consistency
           }
         }
       }
 
       p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-        color: #a8b2d1; // Light gray-blue for body text
-        line-height: 1.6;
+        font-size: 1.2rem; // Slightly larger for readability
+        margin-bottom: 1.5rem; // More spacing
+        color: #a8b2d1; // Kept as is (matches the palette)
+        line-height: 1.7; // Better line spacing
+        animation: fadeIn 1.4s ease-in-out; // Add animation
       }
 
       .rolesSection {
-        margin-top: 2rem;
+        margin-top: 2.5rem; // More spacing
 
         h4 {
-          font-size: 1.5rem;
-          margin-bottom: 1.5rem;
-          color: #ccd6f6; // Light gray-blue text
-          border-bottom: 2px solid #64ffda; // Cyan underline
-          padding-bottom: 0.5rem;
+          font-family: "Poppins", sans-serif;
+          font-size: 1.8rem; // Larger to match other sections
+          font-weight: 600; // Semi-bold
+          margin-bottom: 2rem; // More spacing
+          color: #ffffff; // Pure white for consistency
+          border-bottom: 3px solid #00e5d1; // Brighter cyan for consistency
+          padding-bottom: 0.75rem;
+          animation: fadeIn 1.6s ease-in-out; // Add animation
         }
 
         .roleCard {
-          background: rgba(255, 255, 255, 0.1); // Semi-transparent white
+          background: rgba(255, 255, 255, 0.05); // Subtler transparency for consistency
           border-radius: 10px;
-          padding: 1.5rem;
+          padding: 1.5rem; // Consistent padding
           margin-bottom: 1.5rem;
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); // Stronger shadow
           display: flex;
           align-items: center;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          gap: 1rem; // Better spacing between icon and text
+          transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+          animation: fadeIn 1.8s ease-in-out; // Add animation
 
           &:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px); // Consistent lift effect
+            box-shadow: 0 10px 20px rgba(0, 229, 209, 0.3); // Glow effect
+            background: rgba(255, 255, 255, 0.15); // Consistent hover background
           }
 
           .icon {
-            font-size: 2rem;
-            color: #64ffda; // Cyan icon
-            margin-right: 1rem;
-            transition: transform 0.3s ease, color 0.3s ease;
+            font-size: 2.2rem; // Larger icon
+            color: #00e5d1; // Brighter cyan for consistency
+            transition: transform 0.4s ease 0.1s, color 0.3s ease;
 
             &:hover {
               transform: scale(1.2);
-              color: #52d3b8; // Darker cyan on hover
+              color: #00a8e8; // Lighter cyan on hover for consistency
             }
           }
 
           p {
-            font-size: 1rem;
-            color: #a8b2d1; // Light gray-blue for body text
-            line-height: 1.6;
+            font-size: 1.1rem; // Slightly larger for readability
+            color: #d3d3d3; // Light gray for consistency
+            line-height: 1.7; // Better line spacing
           }
         }
       }
@@ -120,10 +133,10 @@
   }
 
   @media (max-width: 768px) {
-    padding: 2rem;
+    padding: 2rem 1rem; // Consistent with other components
 
-    h2 {
-      font-size: 2.2rem;
+    .sectionHeading {
+      font-size: 2.5rem; // Consistent with other sections
     }
 
     .experienceSection {
@@ -133,10 +146,10 @@
         padding: 1.5rem;
 
         h3 {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
 
           .icon {
-            font-size: 1.8rem;
+            font-size: 2rem;
           }
         }
 
@@ -146,18 +159,19 @@
 
         .rolesSection {
           h4 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
           }
 
           .roleCard {
             padding: 1rem;
+            gap: 0.75rem;
 
             .icon {
               font-size: 1.8rem;
             }
 
             p {
-              font-size: 0.9rem;
+              font-size: 0.95rem;
             }
           }
         }
@@ -166,10 +180,10 @@
   }
 
   @media (max-width: 480px) {
-    padding: 1rem;
+    padding: 1.5rem 1rem; // Consistent with other components
 
-    h2 {
-      font-size: 1.8rem;
+    .sectionHeading {
+      font-size: 2.2rem; // Consistent with other sections
     }
 
     .experienceSection {
@@ -179,10 +193,10 @@
         padding: 1rem;
 
         h3 {
-          font-size: 1.4rem;
+          font-size: 1.5rem;
 
           .icon {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
           }
         }
 
@@ -192,22 +206,43 @@
 
         .rolesSection {
           h4 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
           }
 
           .roleCard {
             padding: 0.75rem;
+            gap: 0.5rem;
 
             .icon {
               font-size: 1.6rem;
             }
 
             p {
-              font-size: 0.8rem;
+              font-size: 0.85rem;
             }
           }
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
   }
 }

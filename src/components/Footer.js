@@ -28,6 +28,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className={styles.socialLink}
             title="GitHub"
+            aria-label="Visit Bala Vardhan's GitHub profile"
           >
             <FaGithub />
           </a>
@@ -37,6 +38,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className={styles.socialLink}
             title="LinkedIn"
+            aria-label="Visit Bala Vardhan's LinkedIn profile"
           >
             <FaLinkedin />
           </a>
@@ -48,7 +50,11 @@ const Footer = () => {
       </div>
       <div className={styles.scrollToTop}>
         {showScroll && (
-          <button onClick={scrollToTop} aria-label="Scroll to top">
+          <button
+            onClick={scrollToTop}
+            aria-label="Scroll to top"
+            className={styles.scrollButton}
+          >
             <FaArrowUp />
           </button>
         )}

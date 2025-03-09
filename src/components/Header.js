@@ -19,7 +19,14 @@ const Header = () => {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <h1>
-          <Link to="/">Bala Vardhan</Link>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            aria-label="Go to Home"
+            className={styles.logo}
+          >
+            Bala Vardhan
+          </Link>
         </h1>
         <div
           className={`${styles.menuIcon} ${
@@ -28,6 +35,8 @@ const Header = () => {
           onClick={toggleMenu}
           aria-expanded={isOpen}
           aria-label="Toggle menu"
+          tabIndex={0} // Ensures keyboard accessibility
+          onKeyPress={(e) => e.key === "Enter" && toggleMenu()} // Keyboard support
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>
@@ -37,6 +46,7 @@ const Header = () => {
               to="/"
               onClick={closeMenu}
               className={location.pathname === "/" ? styles.active : ""}
+              aria-current={location.pathname === "/" ? "page" : null}
             >
               Home
             </Link>
@@ -46,6 +56,7 @@ const Header = () => {
               to="/projects"
               onClick={closeMenu}
               className={location.pathname === "/projects" ? styles.active : ""}
+              aria-current={location.pathname === "/projects" ? "page" : null}
             >
               Projects
             </Link>
@@ -55,6 +66,7 @@ const Header = () => {
               to="/skills"
               onClick={closeMenu}
               className={location.pathname === "/skills" ? styles.active : ""}
+              aria-current={location.pathname === "/skills" ? "page" : null}
             >
               Skills
             </Link>
@@ -64,6 +76,7 @@ const Header = () => {
               to="/experience"
               onClick={closeMenu}
               className={location.pathname === "/experience" ? styles.active : ""}
+              aria-current={location.pathname === "/experience" ? "page" : null}
             >
               Experience
             </Link>
@@ -73,6 +86,7 @@ const Header = () => {
               to="/education"
               onClick={closeMenu}
               className={location.pathname === "/education" ? styles.active : ""}
+              aria-current={location.pathname === "/education" ? "page" : null}
             >
               Education
             </Link>

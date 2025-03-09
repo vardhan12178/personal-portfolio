@@ -5,9 +5,9 @@ import styles from '../styles/Education.module.scss';
 const Education = () => {
   return (
     <main className={styles.main}>
-      <h2>Education</h2>
-      <section className={styles.educationSection}>
-        <div className={styles.card}>
+      <h2 className={styles.sectionHeading}>Education</h2>
+      <section className={styles.educationSection} aria-label="Educational Background">
+        <div className={styles.card} tabIndex={0}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
               <FaGraduationCap className={styles.icon} />
@@ -21,7 +21,7 @@ const Education = () => {
           </div>
         </div>
 
-        <div className={styles.card}>
+        <div className={styles.card} tabIndex={0}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
               <FaBuilding className={styles.icon} />
@@ -34,7 +34,7 @@ const Education = () => {
           </div>
         </div>
 
-        <div className={styles.card}>
+        <div className={styles.card} tabIndex={0}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
               <FaSchool className={styles.icon} />
@@ -47,7 +47,7 @@ const Education = () => {
           </div>
         </div>
 
-        <div className={styles.card}>
+        <div className={styles.card} tabIndex={0}>
           <div className={styles.cardInner}>
             <div className={styles.cardFront}>
               <FaHome className={styles.icon} />
